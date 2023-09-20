@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import TaskList from './TaskList';
 import './TaskBoard.css';
+
 function TaskBoard() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState({ title: '', description: '' });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewTask({ ...newTask, [name]: value });
+  };
 
   const handleAddTask = () => {
     if (newTask.title && newTask.description) {
@@ -18,23 +24,27 @@ function TaskBoard() {
   };
 
   return (
-    <div>
+    <div className="taskboard-container">
       <h1>Task Board</h1>
-      <div>
+      <div className="add-task-container">
         <h2>Add Task</h2>
         <input
           type="text"
+          name="title"
           placeholder="Title"
           value={newTask.title}
-          onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
+          onChange={handleInputChange}
         />
         <input
           type="text"
+          name="description"
           placeholder="Description"
           value={newTask.description}
-          onChange={(e) => setNewTask({ ...newTask, description: e.target.value })}
+          onChange={handleInputChange}
         />
-        <button onClick={handleAddTask}>Add Task</button>
+        <button className="add-task-button" onClick={handleAddTask}>
+          Add Task
+        </button>
       </div>
       <TaskList tasks={tasks} onDeleteTask={handleDeleteTask} />
     </div>

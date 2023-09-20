@@ -1,74 +1,63 @@
-/* Weather.css */
-
-/* Container for the entire Weather component */
 .weather-container {
-    text-align: center;
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* City name heading */
-  .city-name {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  /* Container for individual weather forecast items */
-  .weather-forecast {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  /* Individual weather forecast item */
-  .forecast-item {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 10px;
-    background-color: #fff;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    min-width: 150px;
-  }
-  
-  /* Date and time of the forecast */
-  .forecast-date {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  /* Container for weather details (icon, temperature, humidity, wind speed) */
-  .weather-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  /* Weather icon */
-  .weather-icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 10px;
-  }
-  
-  /* Temperature */
-  .temperature {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  /* Humidity */
-  .humidity {
-    margin-top: 5px;
-  }
-  
-  /* Wind Speed */
-  .wind-speed {
-    margin-top: 5px;
-  }
-  
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.city-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.weather-forecast {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.forecast-item {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 180px;
+}
+
+.forecast-date {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.weather-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.temperature {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.humidity {
+  margin-top: 5px;
+  color: #555;
+}
+
+.wind-speed {
+  margin-top: 5px;
+  color: #555;
+}

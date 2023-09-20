@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
@@ -13,7 +12,7 @@ function App() {
 
   const handleSignup = (user) => {
     const validationErrors = validateUser(user);
-  
+
     if (validationErrors.length === 0) {
       localStorage.setItem('userData', JSON.stringify(user));
       setUserData(user);
@@ -21,26 +20,26 @@ function App() {
       alert(validationErrors.join('\n'));
     }
   };
-  
+
   const validateUser = (user) => {
-  
+
     const validationErrors = [];
-  
+
     if (user.username.length < 4) {
       validationErrors.push('Username must be at least 4 characters long');
     }
-  
+
     if (user.password.length < 6) {
       validationErrors.push('Password must be at least 6 characters long');
     }
-  
-  
+
+
     return validationErrors;
   };
-  
+
   const handleLogin = (user) => {
     const storedUserData = JSON.parse(localStorage.getItem('userData'));
-  
+
     if (storedUserData && user.username === storedUserData.username && user.password === storedUserData.password) {
       setUserData(storedUserData);
     } else {
@@ -49,14 +48,14 @@ function App() {
   };
 
 
-    const handleLogout = () => {
-      const storedUser = JSON.parse(localStorage.getItem('userData'));
-      if (storedUser) {
-        storedUser.isAuthenticated = false;
-        localStorage.setItem('userData', JSON.stringify(storedUser));
-      }
-      setUserData({});
-    };
+  const handleLogout = () => {
+    const storedUser = JSON.parse(localStorage.getItem('userData'));
+    if (storedUser) {
+      storedUser.isAuthenticated = false;
+      localStorage.setItem('userData', JSON.stringify(storedUser));
+    }
+    setUserData({});
+  };
 
   return (
     <Router>
@@ -79,7 +78,7 @@ function App() {
               userData.username ? (
                 <Weather />
               ) : (
-                <Navigate to="/login" state={{ from: '/weather' }} /> 
+                <Navigate to="/login" state={{ from: '/weather' }} />
               )
             }
           />

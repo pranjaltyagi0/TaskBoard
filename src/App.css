@@ -45,7 +45,8 @@ nav a {
 }
 
 /* Weather and Calculator styles */
-.weather-container, .calculator-container {
+.weather-container,
+.calculator-container {
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;
